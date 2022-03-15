@@ -28,16 +28,12 @@ def make_table(rows, columns, value):
 
     #last slot
     table[rows-1][columns-1] = 100
-    # less likely
-    # table = [[value for _ in range(columns)] for _ in range(rows)]
-
-    # for row in table:
-    #     print(row)
     
     return table
 
 def test_slicing():
     list5 = list("Hello World")
+
     # copy
     list6 = list5[:]
     print_list("list6 copy of list5", list6)
@@ -55,17 +51,28 @@ def test_slicing():
     print_list("steps of list5", list6)
 
 def test_comprehension():
-    # even integers between 0 and 20
-    list1 = [i for i in range(0, 21, 2)]
-    
-    # 15 0s
-    list2 = [0 for _ in range(1, 15)]
-    print(list2)
-
     # All of the letters in the string “foobar”
     string = "foobar"
     list3 = [char for char in string]
     print(list3)
+
+    # 15 0s
+    list2 = [0 for _ in range(1, 15)]
+    print(list2)
+
+    # integers between 0 and 12
+    list0 = [i for i in range(0, 13)]
+    print(list0)
+
+    # even integers between 0 and 20
+    list1 = [i for i in range(0, 21, 2)]
+    print(list1)
+    
+    # integers less than 50 divisible by 3 or 5
+    list4 = [i for i in range(0, 51) if i % 3 == 0 or i % 5 == 0]
+    print(list4)
+
+    
 
 def main():    
     list1, list2, list3, list4 = create_lists()
