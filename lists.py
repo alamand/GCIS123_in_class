@@ -23,6 +23,11 @@ def make_table(rows, columns, value):
     for row in table:
         row += [value for _ in range(columns)]
     
+    # assign value to table element, first slot
+    table[0][0] = 10
+
+    #last slot
+    table[rows-1][columns-1] = 100
     # less likely
     # table = [[value for _ in range(columns)] for _ in range(rows)]
 
