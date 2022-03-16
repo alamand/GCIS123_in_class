@@ -1,3 +1,6 @@
+from pyparsing import matchPreviousExpr
+
+
 def create_lists():
     list0 = []
     list1 = [1, 2, 3]
@@ -20,8 +23,8 @@ def change_list(list):
 
 def make_table(rows, columns, value):
     table = [[] for _ in range(rows)]
-    for row in table:
-        row += [value for _ in range(columns)]
+    for i in range(rows):
+        table[i] = [value for _ in range(columns)]
     
     # assign value to table element, first slot
     table[0][0] = 10
@@ -46,8 +49,8 @@ def test_slicing():
     # reverse string
     list6 = list5[::-1]
     print_list("reverse of list5", list6)
-    # steps
-    list6 = list5[:5:2]
+    # steps of 2
+    list6 = list5[::2]
     print_list("steps of list5", list6)
 
 def test_comprehension():
@@ -72,7 +75,14 @@ def test_comprehension():
     list4 = [i for i in range(0, 51) if i % 3 == 0 or i % 5 == 0]
     print(list4)
 
+def print_matrix(table):
+    numRows = len(table)
+    numCols = len(table[0]) # assumes all rows have the same number of columns    
     
+    for i in range(numRows):
+        for j in range(numCols):
+            print(table[i][j], end=" ")
+        print("\n")    
 
 def main():    
     list1, list2, list3, list4 = create_lists()
@@ -130,6 +140,6 @@ def main():
 
     # 2D lists (table of 5 rows, 10 columns filled with 0s)
     table = make_table(5, 10, 0)
-    print(table)
+    print_matrix(table)
 
 main()
