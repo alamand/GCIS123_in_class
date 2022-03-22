@@ -3,6 +3,10 @@ def create_set():
     set1.add(4)
     # no duplicates added
     set1.add(4)
+    print("length of set:", len(set1))    
+    set1.remove(4)
+    set1.discard(5)     #if not in the set, do nothing
+    # set1.remove(5)   Key error 
     if 4 in set1:
         print("Found")
     else:
@@ -64,8 +68,8 @@ def main():
 
     print(sorted(set2)) # non-destructive
 
-    alice = unique_words("input.txt")
-    # print(alice)
+    file_words = unique_words("input.txt")
+    # print(file_words)
 
     a_set = {1,2}
     print(superset(set1, a_set)) # is set1 a superset of a_set?
