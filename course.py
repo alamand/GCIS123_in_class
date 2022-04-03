@@ -7,20 +7,20 @@ class Course:
         self.grade = grade
 
     def get_name(self):
-        return self.__name
+        return self.name
 
     def get_credits(self):
-        return self.__credits
+        return self.credits
 
     def get_grade(self):
-        return self.__grade
+        return self.grade
 
     def set_grade(self,grade):
         self.__grade = grade
 
     def print_course(self):
         print("Course:  name=", self.name,  ", credits=", self.credits,
-            ", grade=", self.grade)
+            ", grade=", self.grade)    
 
 def main():
     c1 = Course("Intro to Python", 4, 89)
