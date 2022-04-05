@@ -1,26 +1,29 @@
 class Course:
-    __slots__ = ["name", "credits", "grade"]
+    __slots__ = ["__name", "__credits", "__sectionNum"]
 
-    def __init__(self, name, credits, grade):
-        self.name = name
-        self.credits = credits
-        self.grade = grade
+    def __init__(self, name, credits, sectionNum):
+        self.__name = name
+        self.__credits = credits
+        self.__sectionNum = sectionNum
 
     def get_name(self):
-        return self.name
+        return self.__name
 
     def get_credits(self):
-        return self.credits
+        return self.__credits
 
     def get_grade(self):
-        return self.grade
+        return self.__grade
 
-    def set_grade(self,grade):
-        self.__grade = grade
+    def set_sectionNum(self, sectionNum):
+        self.__sectionNum = sectionNum
+
+    def get_sectionNum(self):
+        return self.__sectionNum
 
     def print_course(self):
-        print("Course:  name=", self.name,  ", credits=", self.credits,
-            ", grade=", self.grade)    
+        print("Course:  name=", self.__name,  ", credits=", self.__credits,
+            ", grade=", self.__sectionNum)    
 
 def main():
     c1 = Course("Intro to Python", 4, 89)
