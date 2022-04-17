@@ -47,6 +47,7 @@ def main():
     print("Stack size is: ", stack.size())
     print("Node popped:", node)
     stack.print_stack()
+    top_value = stack.peek()
 
 if __name__ == "__main__":
     main()
